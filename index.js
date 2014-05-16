@@ -20,7 +20,7 @@ module.exports.multi = function(x, y) {
 	return x * y;
 };
 
-module.exports.compares = function (x) {
-	return x;
+module.exports.compares = function (array) {
+	return array;
 };
 

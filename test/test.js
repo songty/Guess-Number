@@ -29,6 +29,6 @@ var _ = require('../index');
 //Testing for number > or <
 describe('Greater than', function() {
 	it('compares', function () {
-		expect(_.compares(20)).to.be.above(5);
+		expect(_.compares([1,2,3])).to.be.eql([1,2,3]);
 	});
 });

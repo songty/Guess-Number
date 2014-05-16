@@ -2,7 +2,7 @@
 
 var program = require('commander');
 var _ = require('./index');
-var trueNum = 42;
+var trueNum = [1, 2, 3];
 
 program
   .version('0.0.1')
@@ -11,7 +11,7 @@ program
   .option('-m, --multiply <x> <y>', 'Multiple numbers', _.parseString)
   .option('-d, --divide <x> <y>', 'Multiple numbers', _.parseString)
 
-  .option('-g, --guess <x>', 'Guess Number', parseInt)
+  .option('-g, --guess <x> [y] [z]', 'Guess Number', _.parseString)
 
   .parse(process.argv);
 
@@ -40,9 +40,29 @@ if (program.guess) {
 	console.log(program.guess);
 }
 
-if (program.guess === trueNum) {
-	console.log("Right you are!");
-} else {
-	console.log("Why don't you try again?");
+for (var i = 0; i < trueNum.length; i++) {
+	if (trueNum[i] === program.guess[i]){
+		console.log("Right You are!");
+	} else {
+		if (program.guess.length >= trueNum.length) {
+				if (trueNum[i] !== program.guess[i]) {
+				console.log("WRONG!");
+			}
+
+		}  
+		
+	}
 }
+
+// if (program.guess === trueNum) {
+// 	console.log("Right you are!");
+// } else {
+// 	if (program.guess > trueNum){
+// 		console.log("Why don't you try again?");
+// 		console.log("This time go lower");
+// 	} else {
+// 		console.log("Why don't you try again?");
+// 		console.log("This time go higher");
+// 	}
+// }
 // console.log(result);

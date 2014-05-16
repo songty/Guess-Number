@@ -1,0 +1,23 @@
+{
+  "name": "Guess-Number",
+  "version": "0.1.0",
+  "description": "Number Guessing Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/songty/Guess-Number.git"
+  },
+  "keywords": [
+    "Number",
+    "Game"
+  ],
+  "author": "Tian Song",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/songty/Guess-Number/issues"
+  },
+  "homepage": "https://github.com/songty/Guess-Number"
+}

@@ -2,6 +2,7 @@
 
 var program = require('commander');
 var _ = require('./index');
+var trueNum = 42;
 
 program
   .version('0.0.1')
@@ -9,9 +10,12 @@ program
   .option('-s, --subtraction <x> <y>', 'Subtract numbers', _.parseString)
   .option('-m, --multiply <x> <y>', 'Multiple numbers', _.parseString)
   .option('-d, --divide <x> <y>', 'Multiple numbers', _.parseString)
+
+  .option('-g, --guess <x>', 'Guess Number', parseInt)
+
   .parse(process.argv);
 
-console.log('you ordered a pizza with:');
+console.log('you guessed a number with:');
 if (program.addition) {
 	console.log('You have added!');
 	var result = _.add(program.addition[0], program.addition[1]);
@@ -32,4 +36,13 @@ if (program.divide) {
 	var result =  _.div(program.divide[0], program.divide[1]);
 }
 
-console.log(result);
+if (program.guess) {
+	console.log(program.guess);
+}
+
+if (program.guess === trueNum) {
+	console.log("Right you are!");
+} else {
+	console.log("Why don't you try again?");
+}
+// console.log(result);

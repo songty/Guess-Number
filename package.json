@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/songty/Guess-Number/issues"
   },
-  "homepage": "https://github.com/songty/Guess-Number"
+  "homepage": "https://github.com/songty/Guess-Number",
+  "dependencies": {
+    "commander": "^2.2.0"
+  }
 }

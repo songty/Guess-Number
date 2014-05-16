@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var _ = require('./index');
+
+program
+  .version('0.0.1')
+  .option('-a, --addition <x> <y>', 'Add numbers', _.parseString)
+  .option('-s, --subtraction <x> <y>', 'Subtract numbers', _.parseString)
+  .option('-m, --multiply <x> <y>', 'Multiple numbers', _.parseString)
+  .option('-d, --divide <x> <y>', 'Multiple numbers', _.parseString)
+  .parse(process.argv);
+
+console.log('you ordered a pizza with:');
+if (program.addition) {
+	console.log('You have added!');
+	var result = _.add(program.addition[0], program.addition[1]);
+}
+
+if (program.subtraction) {
+	console.log('You have subtracted!');
+	var result =  _.subtract(program.subtraction[0], program.subtraction[1]);
+}
+
+if (program.multiply) {
+	console.log('You have multiplied!');
+	var result =  _.multi(program.multiply[0], program.multiply[1]);
+}
+
+if (program.divide) {
+	console.log('You have divided!');
+	var result =  _.div(program.divide[0], program.divide[1]);
+}
+
+console.log(result);
